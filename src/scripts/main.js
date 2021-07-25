@@ -1,6 +1,6 @@
 'use strict';
 
-const empList = [...document.getElementsByTagName('ul')];
+const empList = document.querySelector('ul');
 const employeeData = [...document.getElementsByTagName('li')];
 
 function sortList(list) {
@@ -11,9 +11,7 @@ function sortList(list) {
 };
 
 function getEmployees(list) {
-  list.innerHTML = '';
-
-  return employeeData.forEach(employee => list.append(employee));
+  employeeData.forEach(employee => empList.append(employee));
 };
 
 sortList(employeeData);
